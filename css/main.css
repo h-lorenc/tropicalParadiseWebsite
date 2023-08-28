@@ -204,6 +204,57 @@ body {
   background-color: #eee;
 }
 
+.section-heading {
+  position: relative;
+  padding-bottom: 2em;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #1755e7;
+}
+
+.section-padding {
+  padding: 6em 2em;
+}
+
+.dreams__box {
+  display: flex;
+  flex-direction: column;
+  margin: 2em 0;
+}
+.dreams__img {
+  width: 100%;
+  margin-bottom: 1em;
+}
+.dreams__title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5em;
+}
+.dreams__text {
+  font-size: 1.4rem;
+}
+
+@media (min-width: 576px) {
+  .dreams__box {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .dreams__box-text {
+    width: 55%;
+  }
+  .dreams__box-text--right {
+    text-align: right;
+  }
+  .dreams__box-img {
+    width: 40%;
+  }
+  .dreams__box-img--right {
+    order: 1;
+  }
+}
 @media (min-width: 768px) {
   .white-block {
     height: 30px;
@@ -218,6 +269,12 @@ body {
   .header__btn {
     font-size: 1.6rem;
   }
+  .section-heading {
+    font-size: 3.6rem;
+  }
+  .section-padding {
+    padding: 8em 2em;
+  }
 }
 @media (min-width: 992px) {
   .burger-btn {
@@ -229,5 +286,11 @@ body {
   }
   .header__title {
     font-size: 10rem;
+  }
+  .section-heading {
+    font-size: 4.8rem;
+  }
+  .section-padding {
+    padding: 10em 2em;
   }
 }/*# sourceMappingURL=main.css.map */
