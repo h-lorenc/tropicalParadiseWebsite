@@ -222,7 +222,7 @@ body {
 
 .hero-img {
 	position: relative;
-	padding: 20rem 2em;
+	padding: 10rem 2em;
 	@include mixins.heroImages('../img/polynesia-3021072_640.jpg');
 	text-align: center;
 	color: colors.$pure-white;
