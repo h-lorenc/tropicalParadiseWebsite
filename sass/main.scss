@@ -208,6 +208,7 @@ body {
 	}
 
 	&__title {
+		margin: 0.5em 0;
 		font-size: 1.8rem;
 		margin-bottom: 0.5em;
 	}
@@ -216,6 +217,30 @@ body {
 		font-size: 1.4rem;
 	}
 }
+
+// HERO IMG
+
+.hero-img {
+	position: relative;
+	padding: 20rem 2em;
+	@include mixins.heroImages('../img/polynesia-3021072_640.jpg');
+	text-align: center;
+	color: colors.$pure-white;
+	overflow: hidden;
+
+	&__title {
+		font-family: 'Dancing Script', cursive;
+		font-size: 4.8rem;
+		font-weight: 300;
+		padding-bottom: 0.5em;
+	}
+	&__text {
+		padding: 1em 0;
+		font-size: 1.4rem;
+	}
+}
+
+// RECOMMENDED ISLANDS
 
 // ================
 // MEDIA
@@ -243,6 +268,10 @@ body {
 					order: 1;
 				}
 			}
+		}
+
+		&__title {
+			font-size: 2rem;
 		}
 	}
 }
@@ -273,6 +302,18 @@ body {
 	.section-padding {
 		padding: 8em 2em;
 	}
+
+	.hero-img {
+		padding: 30rem 2em;
+
+		hr {
+			margin: 0 auto;
+			width: 70%;
+		}
+		&__text {
+			font-size: 2.2rem;
+		}
+	}
 }
 
 @media (min-width: 992px) {
@@ -295,5 +336,29 @@ body {
 	}
 	.section-padding {
 		padding: 10em 2em;
+	}
+
+	.dreams {
+		&__title {
+			font-size: 3rem;
+		}
+		&__text {
+			font-size: 2.2rem;
+		}
+	}
+
+	.hero-img {
+		padding: 40rem 2em;
+		background-image: colors.$blue-gradient,
+			url('../img/polynesia-3021072_1920.jpg');
+
+		&__title {
+			font-size: 10rem;
+		}
+
+		hr {
+			width: 60%;
+			min-width: 900px;
+		}
 	}
 }
