@@ -242,6 +242,176 @@ body {
 
 // RECOMMENDED ISLANDS
 
+.islands {
+	&__card {
+		position: relative;
+		margin: 1em 0;
+		height: 480px;
+		text-align: center;
+		color: colors.$pure-white;
+		perspective: 1000px;
+
+		&:hover {
+			.islands__card-img {
+				transform: rotateY(-180deg);
+				opacity: 0;
+			}
+
+			.islands__card-info {
+				transform: rotateY(0);
+				opacity: 1;
+			}
+		}
+
+		&-img {
+			padding: 2em;
+			background-size: cover;
+			height: 100%;
+			border-radius: 8px;
+			transition: transform 1s, opacity 1s;
+
+			&--first {
+				background-image: colors.$light-blue-gradient,
+					url('../img/hawaii-79928_640.jpg');
+			}
+			&--second {
+				background-image: colors.$purple-gradient,
+					url('../img/bora-bora-3023437_640.jpg');
+			}
+			&--third {
+				background-image: colors.$blue-gradient,
+					url('../img/boat-166738_640.jpg');
+			}
+			&-title {
+				margin-top: 1em;
+				font-family: 'Dancing Script', cursive;
+				font-size: 2.8rem;
+			}
+			&-info {
+				position: absolute;
+				bottom: 30px;
+				right: 30px;
+				font-size: 1.8rem;
+
+				i {
+					margin-right: 0.3em;
+				}
+			}
+		}
+
+		&-info {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			opacity: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			background-image: colors.$light-blue-gradient-solid;
+			border-radius: 8px;
+			transform: rotateY(180deg);
+			transition: transform 1s, opacity 1s;
+
+			&-title {
+				@include mixins.islandsCardsStyle;
+				top: 0;
+				margin-top: 1.7em;
+				font-family: 'Dancing Script', cursive;
+				font-size: 2.8rem;
+			}
+
+			&-list {
+				margin: 0 auto;
+				width: 70%;
+				list-style: none;
+
+				&-item {
+					padding: 1em;
+					font-size: 1.4rem;
+					border-bottom: 1px solid colors.$light-white;
+
+					&:last-child {
+						border: none;
+					}
+				}
+			}
+			&-btn {
+				@include mixins.islandsCardsStyle;
+				bottom: 2em;
+				padding: 1em;
+				border: none;
+				border-radius: 8px;
+				width: 80%;
+				font-size: 1.8rem;
+				background-color: colors.$green-color;
+
+				&::before {
+					background-color: colors.$green-color-hover;
+				}
+			}
+		}
+	}
+}
+
+// OFFERS
+
+.offers {
+	position: relative;
+	@include mixins.heroImages('../img/maledives-mobile.jpg');
+	overflow: hidden;
+
+	.section-heading {
+		margin-top: 1em;
+		color: colors.$light-white;
+	}
+
+	&__option {
+		margin: 1em 0;
+		border-radius: 8px;
+		box-shadow: 5px 5px 10px rgba(46, 46, 46, 0.18);
+		background-color: colors.$pure-white;
+		overflow: hidden;
+
+		&-img {
+			width: 100%;
+			transition: transform 1s;
+
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+		&-info {
+			padding: 2em;
+			background-color: colors.$pure-white;
+			z-index: 100;
+		}
+		&-heading {
+			margin-bottom: 0.7em;
+			font-size: 1.4rem;
+		}
+		&-text {
+			margin: 0.6em 0;
+		}
+		&-btn {
+			width: 100%;
+			margin-top: 1em;
+			padding: 0.7em 1.4em;
+			border: none;
+			border-radius: 8px;
+			background-color: colors.$main-color;
+			color: colors.$pure-white;
+			cursor: pointer;
+
+			&::before {
+				background-color: colors.$secondary-color;
+			}
+		}
+	}
+}
+
 // ================
 // MEDIA
 // ================
@@ -272,6 +442,36 @@ body {
 
 		&__title {
 			font-size: 2rem;
+		}
+	}
+
+	.offers {
+		&__option {
+			display: flex;
+			margin: 2em 0;
+			width: 100%;
+
+			&-img {
+				width: 50%;
+				height: auto;
+
+				&--right {
+					order: 1;
+				}
+			}
+			&-info {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+			&-heading {
+				margin-bottom: 0.5em;
+				font-size: 2.6rem;
+				font-weight: 300;
+			}
+			&-btn {
+				padding: 1em;
+			}
 		}
 	}
 }
@@ -312,6 +512,19 @@ body {
 		}
 		&__text {
 			font-size: 2.2rem;
+		}
+	}
+
+	.islands {
+		&__cards {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		&__card {
+			width: 40%;
+			margin: 1em;
 		}
 	}
 }
@@ -359,6 +572,33 @@ body {
 		hr {
 			width: 60%;
 			min-width: 900px;
+		}
+	}
+	.islands {
+		&__card {
+			width: 30%;
+		}
+	}
+
+	.offers {
+		background-image: colors.$blue-gradient, url('../img/maledives-hd.jpg');
+
+		&__option {
+			&-img {
+				width: 50%;
+				max-height: 350px;
+			}
+			&-heading {
+				font-size: 3rem;
+				font-weight: 400;
+			}
+			&-text {
+				font-size: 1.5rem;
+			}
+			&-info {
+				padding: 2em;
+				width: 50%;
+			}
 		}
 	}
 }
